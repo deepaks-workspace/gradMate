@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Activity - Smart Student Hub</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .file-upload-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .file-upload-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-100">
+
+    <div class="flex h-screen bg-slate-100">
+        <!-- Sidebar -->
+        <aside class="w-64 flex-shrink-0 hidden md:block bg-white border-r border-slate-200">
+            <div class="p-6">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-indigo-600 text-white flex items-center justify-center rounded-full font-bold text-lg">
+                        S
+                    </div>
+                    <a href="#" class="text-2xl font-bold text-gray-800">Smart Hub</a>
+                </div>
+            </div>
+            <nav class="mt-6 px-4">
+                <a href="dashboard.html" class="flex items-center px-4 py-3 text-slate-600 hover:bg-slate-50 hover:text-indigo-600 rounded-lg">
+                    <i class="fas fa-tachometer-alt w-6 h-6 mr-3"></i>
+                    Dashboard
+                </a>
+                <!-- Active Link -->
+                <a href="#" class="flex items-center px-4 py-3 mt-2 bg-indigo-50 text-indigo-600 rounded-lg font-semibold">
+                    <i class="fas fa-list-check w-6 h-6 mr-3"></i>
+                    My Activities
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 mt-2 text-slate-600 hover:bg-slate-50 hover:text-indigo-600 rounded-lg">
+                    <i class="fas fa-file-alt w-6 h-6 mr-3"></i>
+                    Reports
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 mt-2 text-slate-600 hover:bg-slate-50 hover:text-indigo-600 rounded-lg">
+                    <i class="fas fa-user-circle w-6 h-6 mr-3"></i>
+                    Profile
+                </a>
+            </nav>
+            <div class="absolute bottom-0 w-64 p-4">
+                <a href="index.html" class="flex items-center px-4 py-3 text-slate-600 hover:bg-slate-50 hover:text-indigo-600 rounded-lg">
+                    <i class="fas fa-sign-out-alt w-6 h-6 mr-3"></i>
+                    Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Header -->
+            <header class="bg-white border-b border-slate-200">
+                <div class="flex items-center justify-between p-4">
+                    <h1 class="text-xl md:text-2xl font-bold text-slate-800">Add a New Activity</h1>
+                    <div class="flex items-center space-x-4">
+                        <button class="text-slate-500 hover:text-indigo-600">
+                            <i class="fas fa-bell fa-lg"></i>
+                        </button>
+                        <img src="https://placehold.co/40x40/4F46E5/FFFFFF?text=S" alt="User Avatar" class="w-10 h-10 rounded-full">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-slate-100 p-6">
+                <div class="bg-white p-8 rounded-xl shadow-md max-w-4xl mx-auto">
+                    <h2 class="text-xl font-bold text-slate-800 mb-6">Activity Details</h2>
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Activity Title -->
+                            <div>
+                                <label for="activity-title" class="block text-sm font-medium text-slate-700 mb-1">Activity Title</label>
+                                <input type="text" id="activity-title" placeholder="e.g., National Level Hackathon" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+
+                            <!-- Activity Category -->
+                            <div>
+                                <label for="activity-category" class="block text-sm font-medium text-slate-700 mb-1">Category</label>
+                                <select id="activity-category" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                                    <option>Internship</option>
+                                    <option>Workshop</option>
+                                    <option>Competition</option>
+                                    <option>Certification</option>
+                                    <option>Project</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Start Date -->
+                            <div>
+                                <label for="start-date" class="block text-sm font-medium text-slate-700 mb-1">Start Date</label>
+                                <input type="date" id="start-date" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+
+                            <!-- End Date -->
+                            <div>
+                                <label for="end-date" class="block text-sm font-medium text-slate-700 mb-1">End Date</label>
+                                <input type="date" id="end-date" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mt-6">
+                            <label for="description" class="block text-sm font-medium text-slate-700 mb-1">Description</label>
+                            <textarea id="description" rows="4" placeholder="Briefly describe the activity and your role..." class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                        </div>
+
+                        <!-- File Upload -->
+                        <div class="mt-6">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Upload Proof</label>
+                            <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-slate-300 border-dashed rounded-lg">
+                                <div class="space-y-1 text-center">
+                                    <i class="fas fa-cloud-upload-alt text-4xl text-slate-400"></i>
+                                    <div class="flex text-sm text-slate-600">
+                                        <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                            <span>Upload a file</span>
+                                            <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                                        </label>
+                                        <p class="pl-1">or drag and drop</p>
+                                    </div>
+                                    <p class="text-xs text-slate-500">PDF, PNG, JPG up to 10MB</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="mt-8 flex justify-end space-x-4">
+                            <button type="button" class="px-6 py-2 border border-slate-300 rounded-lg text-slate-700 hover:bg-slate-50">Cancel</button>
+                            <button type="submit" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Submit for Verification</button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
